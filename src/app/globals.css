@@ -15,9 +15,10 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.25rem;
 }
 
 @layer utilities {
@@ -25,3 +26,345 @@ body {
     text-wrap: balance;
   }
 }
+html,
+body,
+.container-pai,
+.container-body {
+  width: 100%;
+  height: 100%;
+}
+
+.container-body {
+  height: calc(100% - 4rem);
+}
+
+.container-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 0.24s;
+  border-bottom: 0.0625rem solid rgb(218, 220, 224);
+}
+
+.container-header-right {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-header-right-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.container-header-right-logo img {
+  height: 38px;
+  margin-top: -10px;
+}
+
+.container-header-right-logo span {
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 1.375rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+  color: #5f6368;
+}
+
+.container-header-right-btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding-right: 1.5rem;
+}
+
+.container-header-right-btns div {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.container-header-right-btns div svg {
+  height: 24px;
+}
+
+.container-header-right-btns div img {
+  border-radius: 50%;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5625rem;
+  width: 100%;
+  padding: 1.5rem;
+  align-content: flex-start;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(218, 220, 224);
+  border-radius: 10px;
+  width: 18.75rem;
+  height: 18.375rem;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+    0 2px 6px 2px rgba(60, 64, 67, 0.15);
+  cursor: pointer;
+}
+
+.card-header {
+  display: flex;
+  width: 100%;
+  height: 6.5rem;
+  padding: 1rem 1rem 0.75rem;
+  position: relative;
+  background-color: #0a0a0a;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-header-title {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  color: #fff;
+  width: 100%;
+}
+
+.card-header-title-icon {
+  color: #fff;
+  fill: #fff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.card-header-title-title {
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 1.375rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+}
+
+.card-header-title-description {
+  height: 1.375rem;
+}
+.card-header-title-link {
+  display: flex;
+  flex-direction: column;
+  width: 92%;
+  font-size: 0.8125rem;
+}
+
+.card-header-title-name {
+  display: flex;
+  font-size: 0.8125rem;
+}
+
+.card-header-title-link:hover,
+.card-header-title-name:hover {
+  text-decoration: underline;
+}
+
+.card-header-title-name-nomeAux {
+  flex: 0 0 4.6875rem;
+}
+
+.card-header-img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  right: 3%;
+  position: absolute;
+  bottom: -43%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 15px;
+  width: 100%;
+  height: 100%;
+}
+
+.card-footer-btn {
+  width: 100%;
+  display: flex;
+  padding: 15px;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.container-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.container-header-left {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+.container-header-left div {
+  width: 70%;
+  height: 80%;
+  fill: #5f6368;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+.container-header-left:hover div {
+  background-color: #f1f3f4;
+}
+
+.container-header-left,
+.nav-bar {
+  width: 4.75rem;
+  overflow: hidden;
+  transition: width cubic-bezier(0, 0, 0.2, 1) 0.2s 0.25s;
+}
+
+.nav-bar {
+  border-right: 0.0625rem solid rgb(218, 220, 224);
+}
+
+.nav-bar:hover,
+.nav-bar.ativo {
+  width: 18.75rem;
+}
+
+.nav-bar ul {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.nav {
+  display: flex;
+  min-height: 2.5rem;
+  align-items: flex-start;
+  margin-right: 1.25rem;
+  overflow: hidden;
+  height: 2.5rem;
+  flex-direction: column;
+}
+
+.nav > div {
+  display: flex;
+  align-items: center;
+}
+
+.nav-icon-children {
+  width: 1.25rem;
+}
+
+.nav.ativo {
+  background-color: rgb(232, 240, 254);
+  border-radius: 0 2rem 2rem 0;
+}
+
+.nav-icon {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem 0.5rem 0;
+  fill: #5f6368;
+  color: #5f6368;
+}
+
+.nav-label {
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+}
+
+.nav-children {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 1.4rem;
+}
+
+.nav-bar.ativo .nav.filho,
+.nav-bar:hover .nav.filho {
+  height: fit-content;
+}
+
+.separador {
+  border-bottom: 1px solid rgb(218, 220, 224);
+  margin: 0.5rem 0;
+}
+
+.dotted {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+}
+
+.card-footer {
+  border-top: 0.0625rem solid rgb(218, 220, 224);
+}
+
+.modal-card {
+  font-family: Roboto, Arial, sans-serif;
+  line-height: 1.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.00625em;
+  font-weight: 400;
+  width: 115px;
+  height: 65px;
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem;
+}
+
+.container-loading-data {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading__spinner {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #000;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* TODO
+@media (max-width: 1042px) {
+  .nav-bar.ativo {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    background: #fff;
+    height: 100%;
+  }
+}*/
