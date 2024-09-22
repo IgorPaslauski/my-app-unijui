@@ -16,7 +16,7 @@ export function HeaderPage() {
       <div className="container-header-right">
         <div className="container-header-right-logo">
           <img src="https://www.gstatic.com/classroom/web/10th_anniversary.png" />
-          <span>Google Sala de Aula do Igor</span>
+          <span>Google Sala de Aula</span>
         </div>
         <div className="container-header-right-btns">
           <div>
