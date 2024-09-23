@@ -9,6 +9,7 @@ export interface Aula {
   criado_em: Date;
   professor_id: number;
   link_img_fundo: string;
+  cor_fundo_nav: string;
   curso?: Curso; // Informações do curso
   professor?: Usuario; // Informações do professor
 }

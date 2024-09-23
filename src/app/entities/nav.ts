@@ -5,5 +5,8 @@ export class Nav {
   public link: string = "";
   public idPai: number = 0;
   public ordem: number = 0;
+  public TurmaId: number = 0;
   public subNav: Nav[] = [];
+
+  constructor() {}
 }

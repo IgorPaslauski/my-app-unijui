@@ -1,7 +1,33 @@
 import { Nav } from "../entities/nav";
 import { Menu } from "./Menu";
 
-export function NavBar() {
+const retornarTurmas = async () => {
+  const data = await fetch("http://localhost:8080/aulas");
+  const aulas = await data.json();
+
+  return aulas;
+};
+
+const converteTurmas = async () => {
+  const turmas = await retornarTurmas();
+  const navsTurma: Nav[] = turmas.map((turma: any) => {
+    return {
+      id: 0,
+      nome: "",
+      link: "",
+      idPai: 0,
+      ordem: 1,
+      icon: "",
+      subNav: [],
+      TurmaId: turma.id,
+    };
+  });
+  return navsTurma;
+};
+
+export async function NavBar() {
+  const navsTurma: Nav[] = await converteTurmas();
+
   const navs: Nav[] = [
     {
       id: 1,
@@ -11,6 +37,7 @@ export function NavBar() {
       ordem: 1,
       icon: "home",
       subNav: [],
+      TurmaId: 0,
     },
     {
       id: 2,
@@ -20,6 +47,7 @@ export function NavBar() {
       ordem: 2,
       icon: "agenda",
       subNav: [],
+      TurmaId: 0,
     },
     {
       id: 0,
@@ -29,6 +57,7 @@ export function NavBar() {
       ordem: 0,
       icon: "separador",
       subNav: [],
+      TurmaId: 0,
     },
     {
       id: 3,
@@ -36,6 +65,7 @@ export function NavBar() {
       link: "",
       idPai: 0,
       ordem: 3,
+      TurmaId: 0,
       icon: "minhasInscricoes",
       subNav: [
         {
@@ -46,7 +76,9 @@ export function NavBar() {
           ordem: 4,
           icon: "pendentes",
           subNav: [],
+          TurmaId: 0,
         },
+        ...navsTurma,
       ],
     },
     {
@@ -57,6 +89,7 @@ export function NavBar() {
       ordem: 0,
       icon: "separador",
       subNav: [],
+      TurmaId: 0,
     },
     {
       id: 6,
@@ -66,6 +99,7 @@ export function NavBar() {
       ordem: 6,
       icon: "turmasArquivadas",
       subNav: [],
+      TurmaId: 0,
     },
     {
       id: 7,
@@ -75,6 +109,7 @@ export function NavBar() {
       ordem: 7,
       icon: "configuracoes",
       subNav: [],
+      TurmaId: 0,
     },
   ];
 

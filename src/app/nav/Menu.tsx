@@ -1,7 +1,12 @@
 import { Nav } from "../entities/nav";
+import { MenuTurma } from "./MenuTurma";
 
 export function Menu({ nav, pai }: { nav: Nav; pai?: Nav }) {
   let icon;
+
+  if(nav.TurmaId !== 0) {
+    return <MenuTurma nav={nav} />;
+  }
 
   if (nav.id === 0) {
     return <li className="separador"></li>;
