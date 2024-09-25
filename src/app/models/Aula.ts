@@ -1,4 +1,5 @@
 import { Curso } from "./Curso";
+import { Tarefa } from "./Tarefa";
 import { Usuario } from "./Usuario";
 
 export interface Aula {
@@ -12,4 +13,5 @@ export interface Aula {
   cor_fundo_nav: string;
   curso?: Curso; // Informações do curso
   professor?: Usuario; // Informações do professor
+  tarefas?: Tarefa[]; // Informações do professor
 }

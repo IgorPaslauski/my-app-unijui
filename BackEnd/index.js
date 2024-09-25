@@ -70,6 +70,19 @@ app.get('/aula/:id', async (req, res) => {
     });
 });
 
+app.get('/tarefas/:id', async (req, res) => {
+    tratarErroConexao(req, res, async () => {
+        const { id } = req.params;
+        const result = await pool.query(`
+            SELECT 
+                *
+            FROM tarefas 
+            WHERE aula_id = $1
+            `, [id]);
+        res.json(result.rows);
+    });
+});
+
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);
 });
